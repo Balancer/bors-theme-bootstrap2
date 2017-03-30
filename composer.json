@@ -1,0 +1,20 @@
+{
+	"name": "balancer/bors-theme-bootstrap2",
+	"description": "Bootstrap2 asset for use with BORS© framework",
+	"license": "MIT",
+
+	"authors": [
+		{ "name": "Balancer", "email": "balancer@balancer.ru" }
+	],
+
+	"require": {
+		"balancer/bors-core": "*",
+        "bors/jquery": "*"
+	},
+
+    "autoload": {
+		"psr-4": {
+			"B2\\Bootstrap2\\": "src/"
+		}
+    }
+}
