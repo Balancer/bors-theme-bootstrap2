@@ -50,9 +50,10 @@ if(empty($navbar_classes))
 else
 	echo "<div class=\"{$navbar_classes}\" role=\"navigation\">";
 ?>
+		<div class="navbar-inner">
 		<div class="container">
 			<div class="navbar-header">
-				<button type="button" class="navbar-toggle collapsed" data-toggle="collapse" data-target=".navbar-collapse">
+				<button type="button" class="btn btn-navbar" data-toggle="collapse" data-target=".nav-collapse">
 					<span class="sr-only">Toggle navigation</span>
 					<span class="icon-bar"></span>
 					<span class="icon-bar"></span>
@@ -61,17 +62,17 @@ else
 
 <?php
 if(empty($brand_logo))
-	echo "<a class=\"navbar-brand\" href=\"{$self->project()->url()}\">".htmlspecialchars($self->project()->title())."</a>";
+	echo "<a class=\"brand\" href=\"{$self->project()->url()}\">".htmlspecialchars($self->project()->title())."</a>";
 else
-	echo "<a class=\"navbar-brand\" href=\"{$self->project()->url()}\">{$brand_logo}</a>";
+	echo "<a class=\"brand\" href=\"{$self->project()->url()}\">{$brand_logo}</a>";
 ?>
 			</div>
 <?php
 	if($nav_menu = $self->get('navbar'))
 	{
 ?>
-			<div class="navbar-collapse collapse">
-				<ul class="nav navbar-nav">
+			<div class="nav-collapse collapse">
+				<ul class="nav">
 
 <?php
 		foreach($nav_menu as $title => $submenu)
@@ -103,9 +104,10 @@ else
 	}
 ?>
 		</div>
+		</div><!-- .navbar-inner -->
 	</div>
 
-	<div class="container theme-showcase" role="main">
+	<div class="container" role="main">
 
 <?php if($self->page_title() || $self->description()) { ?>
 		<div class="jumbotron">
@@ -116,7 +118,7 @@ else
 		</div>
 <?php } ?>
 
-<?php require __DIR__.'/bootstrap3/breadcrumbs.tpl.php'; ?>
+		<?= $self->layout()->breadcrumb(); ?>
 
 		<?= $self->body() ?>
 
