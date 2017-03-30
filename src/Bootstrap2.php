@@ -1,10 +1,10 @@
 <?php
 
-namespace B2\Bootstrap2;
+namespace B2\Theme;
 
-class Theme extends \B2\Theme\Common
+class Bootstrap2 extends \B2\Theme\Common
 {
-	var $layout_class = \B2\Bootstrap2\Layout::class;
+	var $layout_class = \B2\Theme\Bootstrap2\Layout::class;
 
 	function pre_show()
 	{
